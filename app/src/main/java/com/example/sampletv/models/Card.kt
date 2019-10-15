@@ -17,31 +17,22 @@ class Card {
 
     @SerializedName("title")
     var title = ""
-    @SerializedName("description")
-    var description = ""
-    @SerializedName("extraText")
-    var extraText = ""
+    @SerializedName("subTitleOne")
+    var subTitleOne = ""
+    @SerializedName("subDescOne")
+    var subDescOne = ""
+    @SerializedName("subTitleTwo")
+    var subTitleTwo = ""
+    @SerializedName("subDescTwo")
+    var subDescTwo = ""
     @SerializedName("card")
     var imageUrl: String? = null
-    @SerializedName("footerColor")
-    private var mFooterColor: String? = null
     @SerializedName("selectedColor")
     private var mSelectedColor: String? = null
     @SerializedName("localImageResource")
     var localImageResource: String? = null
-    @SerializedName("footerIconLocalImageResource")
-    var footerResource: String? = null
     @SerializedName("type")
-    var type: Card.Type? = null
-    @SerializedName("id")
-    var id: Int = 0
-    @SerializedName("width")
-    var width: Int = 0
-    @SerializedName("height")
-    var height: Int = 0
-
-    val footerColor: Int
-        get() = if (mFooterColor == null) -1 else Color.parseColor(mFooterColor)
+    var type: Type? = null
 
     val selectedColor: Int
         get() = if (mSelectedColor == null) -1 else Color.parseColor(mSelectedColor)
@@ -58,10 +49,6 @@ class Card {
 
         }
 
-    fun setFooterColor(footerColor: String) {
-        mFooterColor = footerColor
-    }
-
     fun setSelectedColor(selectedColor: String) {
         mSelectedColor = selectedColor
     }
@@ -77,28 +64,9 @@ class Card {
         return localImageResource
     }
 
-    fun getFooterLocalImageResourceName(): String? {
-        return footerResource
-    }
-
     enum class Type {
-
-        MOVIE_COMPLETE,
-        MOVIE,
-        MOVIE_BASE,
-        ICON,
-        SQUARE_BIG,
-        SINGLE_LINE,
-        GAME,
-        SQUARE_SMALL,
-        DEFAULT,
-        SIDE_INFO,
-        SIDE_INFO_TEST_1,
-        TEXT,
-        CHARACTER,
-        GRID_SQUARE,
-        VIDEO_GRID
-
+        PERFORMANCE,
+        CHART
     }
 
 }
